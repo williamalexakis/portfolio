@@ -2,6 +2,6 @@
 
 <https://williamalexakis.com>
 
-Built with HTML/CSS
+Developed with HTML/CSS
 
 Hosted on Cloudflare Pages

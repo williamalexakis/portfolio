@@ -1,22 +1,227 @@
 <!DOCTYPE html>
+
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>William Alexakis</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="wrapper header__inner">
-        <p class="logo">William Alexakis</p>
-      </div>
-    </header>
-  </body>
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <title>William Alexakis</title>
+
+        <meta name="description" content="Portfolio of William Alexakis — Student software engineer building low-level tools and real-world software systems.">
+        <link rel="canonical" href="https://williamalexakis.com">
+
+        <meta property="og:title" content="William Alexakis">
+        <meta property="og:description" content="Student software engineer building low-level tools and real-world software systems.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://williamalexakis.com">
+
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="William Alexakis">
+        <meta name="twitter:description" content="Student software engineer building low-level tools and real-world software systems.">
+
+        <meta name="theme-color" content="#020408">
+        <meta name="color-scheme" content="dark">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="./styles.css" />
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="wrapper header__inner">
+                <p class="logo">William Alexakis</p>
+
+                <nav class="nav">
+                    <a href="#projects">Projects</a>
+                    <a href="#achievements">Achievements</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#about">About</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="wrapper sections">
+            <section class="hero-bio">
+                <h1>I'm a 15-year-old software engineer. I build low-level tools and real-world software systems.</h1>
+
+                <ul class="hero-list">
+                    <li>Creator of StCats Ops, a full-stack administrative platform for my school's CS department.</li>
+                    <li>Developer of Phase, a custom bytecode-interpreted programming language made in C.</li>
+                    <li>Currently open to internship opportunities and new engineering projects.</li>
+                </ul>
+
+                <div class="hero-links">
+                    <a href="mailto:w.alexakis@icloud.com">Email</a>
+                    <a href="https://github.com/williamalexakis" target="_blank" rel="noreferrer">GitHub</a>
+                </div>
+            </section>
+
+            <section id="projects" class="section-anchor">
+                <h2>Projects</h2>
+
+                <div class="skills-group">
+                    <h3>StCats Ops</h3>
+
+                    <div class="hero-links">
+                        <a href="https://github.com/williamalexakis/stcats-ops" target="_blank" rel="noreferrer">Repository</a>
+                    </div>
+
+                    <p>A full-stack internal management platform built for the St. Catherine's British School CS department.</p>
+
+                    <ul class="skills-list">
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Features custom authentication, lesson timetable scheduling, browser-side code editor, integrated admin dashboard, and Microsoft SSO.</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Designed modular backend architecture using Django and PostgreSQL.</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Commissioned by department stakeholders for real faculty use.</span>
+                        </li>
+                    </ul>
+
+                    <p>Tech stack: Python, Django, PostgreSQL, HTML/CSS/JS, WhiteNoise, Gunicorn, Azure AD, Render</p>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Phase</h3>
+
+                    <div class="hero-links">
+                        <a href="https://github.com/williamalexakis/phase" target="_blank" rel="noreferrer">Repository</a>
+                    </div>
+
+                    <p>A custom interpreted programming language built from scratch with a focus on expressiveness and control.</p>
+
+                    <ul class="skills-list">
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Features clean syntax, static typing, bytecode compilation, comprehensive error reporting, and integrated debugging options.</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Designed entirely custom bytecode instruction set and VM for memory safety and portability.</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Implemented modular compiler architecture enabling easy extensions including new language features, optimizations, and future JIT compilation.</span>
+                        </li>
+                    </ul>
+
+                    <p>Tech stack: C, CMake</p>
+                </div>
+            </section>
+
+            <section id="achievements" class="section-anchor">
+                <h2>Achievements</h2>
+
+                <div class="skills-group">
+                    <ul class="skills-list">
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Two-time winner (2023, 2024) of the Line Robot Competition at StCatsHacks as team programmer.</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="skills" class="section-anchor">
+                <h2>Skills</h2>
+
+                <div class="skills-group">
+                    <h3>Languages</h3>
+
+                    <ul class="skills-list">
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Python</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>C</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>HTML / CSS / JavaScript</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Bash / Zsh</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="skills-group">
+                    <h3>Tools &amp; Technologies</h3>
+                    <ul class="skills-list">
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Linux / Unix</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Git</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Django</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>PostgreSQL</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>CMake</span>
+                        </li>
+
+                        <li>
+                            <span class="bullet">∙</span>
+                            <span>Cloudflare</span>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="about" class="section-anchor">
+                <h2>About</h2>
+
+                <p>I'm a 15-year-old software engineer interested in systems programming, backend architecture, and programming language design. I enjoy building software that's both technically rigorous and practically useful.</p>
+                <p>My current work includes StCats Ops, a full-stack internal platform built for my school's CS department, and Phase, a custom bytecode-interpreted language implemented from scratch in C. I focus on clean architecture, modular design, and projects that scale beyond simple prototypes.</p>
+                <p>I completed my CS GCSE a year early with a grade 9, and I'll soon begin the IB. I'm planning larger projects involving compiler extensions, applied algorithmic work, and domain-specific languages.</p>
+                <p>I'm open to internship opportunities and collaborations on software systems.</p>
+            </section>
+
+            <section id="contact" class="section-anchor">
+                <h2>Contact</h2>
+
+                <div class="contact-links">
+                    <p>Email: <a href="mailto:w.alexakis@icloud.com">w.alexakis@icloud.com</a></p>
+                    <p>GitHub: <a href="https://github.com/williamalexakis" target="_blank" rel="noreferrer">williamalexakis</a></p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="wrapper footer__inner">© William Alexakis</div>
+        </footer>
+    </body>
+
 </html>
