@@ -1,4 +1,4 @@
-# My Personal Site & Portfolio
+# My Personal Portfolio Site
 
 <https://williamalexakis.com>
 
