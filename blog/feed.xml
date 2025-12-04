@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>William Alexakis Blog</title>
+    <description>Personal blog and writings by William Alexakis on programming languages, systems programming, and software engineering.</description>
+    <link>https://williamalexakis.com/blog</link>
+    <atom:link href="https://williamalexakis.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Writing My Own Programming Language</title>
+      <description>How I built Phase, a statically-typed bytecode-interpreted language, from scratch to bridge the gap between high-level and low-level languages.</description>
+      <link>https://williamalexakis.com/blog/posts/writing-phase.html</link>
+      <guid isPermaLink="true">https://williamalexakis.com/blog/posts/writing-phase.html</guid>
+      <pubDate>Fri, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <author>w.alexakis@icloud.com (William Alexakis)</author>
+    </item>
+  </channel>
+</rss>
