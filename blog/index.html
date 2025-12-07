@@ -6,23 +6,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Blog • William Alexakis</title>
-    <meta name="description" content="Personal blog and writings by William Alexakis on programming languages, systems programming, and software engineering.">
-    <meta name="keywords" content="William Alexakis, blog, programming, software engineering, systems programming, programming languages">
+    <meta name="title" content="Blog • William Alexakis">
+    <meta name="description" content="Personal blog and technical writings by William Alexakis on software engineering.">
+    <meta name="keywords" content="William Alexakis, blog, programming, software engineering, systems programming, programming languages, compilers, interpreters">
     <meta name="author" content="William Alexakis">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://williamalexakis.com/blog">
     <link rel="alternate" type="application/rss+xml" title="William Alexakis Blog RSS Feed" href="https://williamalexakis.com/blog/feed.xml">
 
     <meta property="og:title" content="Blog • William Alexakis">
-    <meta property="og:description" content="Personal blog and writings by William Alexakis on programming languages, systems programming, and software engineering.">
+    <meta property="og:description" content="Personal blog and technical writings by William Alexakis on software engineering.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://williamalexakis.com/blog">
-    <meta property="og:image" content="https://williamalexakis.com/assets/icons/favicon.png">
+    <meta property="og:image" content="https://williamalexakis.com/assets/icons/social-share.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="William Alexakis">
+    <meta property="og:locale" content="en_US">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blog • William Alexakis">
-    <meta name="twitter:description" content="Personal blog and writings by William Alexakis on programming languages, systems programming, and software engineering.">
-    <meta property="twitter:image" content="https://williamalexakis.com/assets/icons/favicon.png">
+    <meta name="twitter:description" content="Personal blog and technical writings by William Alexakis on software engineering.">
+    <meta property="twitter:image" content="https://williamalexakis.com/assets/icons/social-share.png">
+    <meta name="twitter:image:alt" content="William Alexakis monogram logo">
 
     <meta name="theme-color" content="#020408">
     <meta name="color-scheme" content="dark">
@@ -32,6 +38,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="blog-styles.css" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Blog",
+                "@id": "https://williamalexakis.com/blog#blog",
+                "url": "https://williamalexakis.com/blog",
+                "name": "William Alexakis Blog",
+                "description": "Personal blog and technical writings by William Alexakis on software engineering.",
+                "inLanguage": "en",
+                "image": "https://williamalexakis.com/assets/icons/social-share.png",
+                "publisher": {
+                    "@id": "https://williamalexakis.com/#person"
+                },
+                "blogPost": [
+                    {
+                        "@type": "BlogPosting",
+                        "@id": "https://williamalexakis.com/blog/posts/writing-phase.html",
+                        "url": "https://williamalexakis.com/blog/posts/writing-phase.html",
+                        "headline": "Writing My Own Programming Language",
+                        "datePublished": "2025-04-12",
+                        "image": "https://williamalexakis.com/assets/icons/social-share.png"
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "@id": "https://williamalexakis.com/blog#breadcrumb",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://williamalexakis.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "https://williamalexakis.com/blog"
+                    }
+                ]
+            },
+            {
+                "@type": "Person",
+                "@id": "https://williamalexakis.com/#person",
+                "name": "William Alexakis",
+                "url": "https://williamalexakis.com/",
+                "jobTitle": "Software Engineer",
+                "description": "15-year-old software engineer building low-level tools and real-world software systems.",
+                "email": "mailto:w.alexakis@icloud.com",
+                "image": "https://williamalexakis.com/assets/icons/social-share.png",
+                "sameAs": [
+                    "https://github.com/williamalexakis",
+                    "https://williamalexakis.com/blog"
+                ]
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
@@ -48,15 +116,18 @@
     </div>
 
     <main class="wrapper sections">
-        <section>
+        <section aria-labelledby="blog-heading">
+            <h1 id="blog-heading">William Alexakis Blog</h1>
             <div class="blog-list">
-                <a href="posts/writing-phase.html" class="blog-post-card">
-                    <h3>Writing My Own Programming Language</h3>
-                    <div class="blog-meta">4/12/2025</div>
-                    <p class="blog-excerpt">
-                        How I built Phase, a statically-typed bytecode-interpreted language, from scratch to bridge the gap between high-level and low-level languages.
-                    </p>
-                </a>
+                <article>
+                    <a href="posts/writing-phase.html" class="blog-post-card">
+                        <h2>Writing My Own Programming Language</h2>
+                        <div class="blog-meta"><time datetime="2025-04-12">4/12/2025</time></div>
+                        <p class="blog-excerpt">
+                            How I built Phase, a statically-typed bytecode-interpreted language, from scratch to bridge the gap between high-level and low-level languages.
+                        </p>
+                    </a>
+                </article>
             </div>
         </section>
     </main>
