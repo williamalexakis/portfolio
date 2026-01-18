@@ -123,7 +123,7 @@
                 <h2>The Origin Story</h2>
                 
                 <p>
-                    Last summer, I was deep into learning C. I loved the control it provided — pointers, memory management, hardware access — but I kept being frustrated by one thing: <em>the boilerplate</em>. Every time I wanted to do something that seemed simple, I actually had to write dozens of lines of code.
+                    Last summer, I was deep into learning C. I loved the control it provided — pointers, memory management, hardware access — but I kept being frustrated by one thing: the boilerplate. Every time I wanted to do something that seemed simple, I actually had to write dozens of lines of code.
                 </p>
                 
                 <p>
@@ -131,7 +131,7 @@
                 </p>
                 
                 <p>
-                    So I decided to build <em>my own</em> middleground: <strong>Phase</strong> — a statically-typed, bytecode-interpreted language that combines the expressiveness of high-level languages (like Python) with the explicitness of lower-level languages (like C).
+                    So I decided to build my own middleground: Phase — a statically-typed, bytecode-interpreted language that combines the expressiveness of high-level languages (like Python) with the explicitness of lower-level languages (like C).
                 </p>
                 
                 <h2>Why Build From Scratch?</h2>
@@ -141,13 +141,13 @@
                 </p>
                 
                 <p>
-                    <em>Why?</em> Because I wanted to understand each and every part of the pipeline; I didn't want to treat any section like a black box. I wanted to control <em>exactly</em> how a line of source code gets converted into tokens, into AST nodes, into bytecode, and then executed by the VM. And the only way to truly understand and control something is by building it yourself.
+                    Why? Because I wanted to understand each and every part of the pipeline; I didn't want to treat any section like a black box. I wanted to control exactly how a line of source code gets converted into tokens, into AST nodes, into bytecode, and then executed by the VM. And the only way to truly understand and control something is by building it yourself.
                 </p>
                 
                 <h2>The Importance of Diagnostics</h2>
                 
                 <p>
-                    Another thing I thought of during Phase's planning was error messages — specifically, informative, helpful, and visually appealing ones. Too many languages treat errors as afterthoughts, providing you with vague messages that don't actually give you what you <em>want</em>.
+                    Another thing I thought of during Phase's planning was error messages — specifically, informative, helpful, and visually appealing ones. Too many languages treat errors as afterthoughts, providing you with vague messages that don't actually give you what you want.
                 </p>
                 
                 <p>
@@ -174,10 +174,10 @@
                 </p>
                 
                 <ul>
-                    <li><strong>What</strong> went wrong, in just a few words.</li>
-                    <li><strong>Where</strong> the error occurred, with visual markers too.</li>
-                    <li><strong>Why</strong> it's a problem, including context for what was expected.</li>
-                    <li><strong>How</strong> we could fix it, with a direct code suggestion.</li>
+                    <li>What went wrong, in just a few words.</li>
+                    <li>Where the error occurred, with visual markers too.</li>
+                    <li>Why it's a problem, including context for what was expected.</li>
+                    <li>How we could fix it, with a direct code suggestion.</li>
                 </ul>
                 
                 <p>
@@ -229,7 +229,7 @@
                 <h3>1. Lexer (Tokenization)</h3>
                 
                 <p>
-                    The lexer is the very first stage, taking in raw source code — an arbitrary string of characters — and break it down into <em>tokens</em>: meaningful units of the language, such as keywords, operators, and literals.
+                    The lexer is the very first stage, taking in raw source code — an arbitrary string of characters — and break it down into tokens: meaningful units of the language, such as keywords, operators, and literals.
                 </p>
                 
                 <p>
@@ -249,13 +249,13 @@ RPAREN
 NEWLINE</code></pre>
                 
                 <p>
-                    The lexer also handles details like skipping whitespace, recognizing keywords and identifiers, and handling string literals with escape sequences. Conceptually, it's simple, which is what I thought until I realized it was one of the most tedious aspects of the whole interpreter to get <em>right</em>.
+                    The lexer also handles details like skipping whitespace, recognizing keywords and identifiers, and handling string literals with escape sequences. Conceptually, it's simple, which is what I thought until I realized it was one of the most tedious aspects of the whole interpreter to get right.
                 </p>
                 
                 <h3>2. Parser (Syntax Analysis)</h3>
                 
                 <p>
-                    The parser takes the stream of tokens the lexer produced and constructs a hierarchical <em>Abstract Syntax Tree</em> (AST), which represents the grammatical structure of the program.
+                    The parser takes the stream of tokens the lexer produced and constructs a hierarchical Abstract Syntax Tree (AST), which represents the grammatical structure of the program.
                 </p>
                 
                 <p>
@@ -292,7 +292,7 @@ NEWLINE</code></pre>
                 <h3>4. Bytecode Generator (Compilation)</h3>
                 
                 <p>
-                    The bytecode generator takes the AST (after it passes type checking) and compiles it into <em>bytecode</em>: a custom, Assembly-like instruction set that's much simpler to execute than the AST itself.
+                    The bytecode generator takes the AST (after it passes type checking) and compiles it into bytecode: a custom, Assembly-like instruction set that's much simpler to execute than the AST itself.
                 </p>
                 
                 <p>
@@ -321,13 +321,13 @@ OP_HALT           ; Stop the program</code></pre>
                 <h3>5. Virtual Machine (Execution)</h3>
                 
                 <p>
-                    The final component of the pipeline is the <em>VM</em>, which directly executes the bytecode. It maintains:
+                    The final component of the pipeline is the VM, which directly executes the bytecode. It maintains:
                 </p>
                 
                 <ul>
-                    <li>An <strong>instruction pointer</strong> tracking which instruction to execute next.</li>
-                    <li>A <strong>stack</strong> for temporary values and computations.</li>
-                    <li>A <strong>global environment</strong> for holding variables.</li>
+                    <li>An instruction pointer tracking which instruction to execute next.</li>
+                    <li>A stack for temporary values and computations.</li>
+                    <li>A global environment for holding variables.</li>
                 </ul>
                 
                 <p>
@@ -341,7 +341,7 @@ OP_HALT           ; Stop the program</code></pre>
                 <pre><code class="language-none">Hello world!</code></pre>
                 
                 <p>
-                    Creating the VM was a <em>great</em> learning experience for interpreter design, and I'm happy that I chose to write it myself instead of using a ready-made tool.
+                    Creating the VM was a great learning experience for interpreter design, and I'm happy that I chose to write it myself instead of using a ready-made tool.
                 </p>
                 
                 <h2>Design Decisions and Tradeoffs</h2>
@@ -357,7 +357,7 @@ OP_HALT           ; Stop the program</code></pre>
                 </p>
                 
                 <p>
-                    However, as I tested my first Phase programs, I realised that the build-run pipeline was <em>very</em> tedious. Even though I felt that a transpiler would demonstrate more low-level knowledge, I decided to convert Phase to an interpreter by switching out the backend for a bytecode generator and a VM, while keeping the same lexer and parser.
+                    However, as I tested my first Phase programs, I realised that the build-run pipeline was very tedious. Even though I felt that a transpiler would demonstrate more low-level knowledge, I decided to convert Phase to an interpreter by switching out the backend for a bytecode generator and a VM, while keeping the same lexer and parser.
                 </p>
                 
                 <h3>Static Typing vs Dynamic Typing</h3>
@@ -373,7 +373,7 @@ OP_HALT           ; Stop the program</code></pre>
                 <h3>Stack-Based VM vs Register-Based VM</h3>
                 
                 <p>
-                    I chose a stack-based architecture over register-based, because it's <em>much</em> simpler to implement. However, it's also slower because of more stack operations.
+                    I chose a stack-based architecture over register-based, because it's much simpler to implement. However, it's also slower because of more stack operations.
                 </p>
                 
                 <p>
@@ -391,10 +391,10 @@ OP_HALT           ; Stop the program</code></pre>
                 </p>
                 
                 <ul>
-                    <li><strong>An arena memory allocator</strong></li>
-                    <li><strong>JIT bytecode compilation</strong></li>
-                    <li><strong>Standard input</strong></li>
-                    <li><strong>Aggregate data types</strong></li>
+                    <li>An arena memory allocator</li>
+                    <li>JIT bytecode compilation</li>
+                    <li>Standard input</li>
+                    <li>Aggregate data types</li>
                 </ul>
                 
                 <h2>What I Learned</h2>
@@ -422,7 +422,7 @@ OP_HALT           ; Stop the program</code></pre>
                 </p>
                 
                 <p>
-                    If you're thinking about creating your own language, this is my advice: you can plan a bit, get some ideas about syntax and pipelines, but just <em>start</em>. I made the mistake of spending a month just planning and reading; you'll learn quickly by just building it, piece-by-piece.
+                    If you're thinking about creating your own language, this is my advice: you can plan a bit, get some ideas about syntax and pipelines, but just start. I made the mistake of spending a month just planning and reading; you'll learn quickly by just building it, piece-by-piece.
                 </p>
                 
                 <p>
