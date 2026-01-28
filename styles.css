@@ -192,10 +192,6 @@ a:focus-visible {
   pointer-events: none;
 }
 
-#projects .skills-group p:last-of-type {
-  font-style: italic;
-}
-
 .skills-list {
   list-style: disc;
   padding-left: 1.25rem;
@@ -207,11 +203,6 @@ a:focus-visible {
 .skills-list li {
   color: var(--fg);
   font-size: 0.95rem;
-}
-
-.skills-group > p:last-of-type {
-  opacity: 0.7;
-  font-size: 0.9rem;
 }
 
 .bullet {
