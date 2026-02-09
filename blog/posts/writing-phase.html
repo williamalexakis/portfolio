@@ -117,7 +117,7 @@
             <a href="/blog" class="back-link">← Back to Blog</a>
             
             <h1>Writing My Own Programming Language</h1>
-            <div class="blog-meta"><time datetime="2025-04-12">Created 4/12/2025 • Last edit 22/1/2026</time></div>
+            <div class="blog-meta"><time datetime="2025-04-12">Created 4/12/2025 • Last edit 9/2/2026</time></div>
             
             <div class="blog-content">
                 <h2>How Phase Started</h2>
@@ -145,7 +145,7 @@
                 <h2>Why Build From Scratch?</h2>
                 
                 <p>
-                    Despite the existence and popularity of tools like LLVM that could've made this a lot easier, every single part of Phase — from lexer to virtual machine — is fully handwritten.
+                    Despite the existence and popularity of tools like LLVM that could've made this a lot easier, every single part of Phase — from lexer to virtual machine — is fully handwritten by me.
                 </p>
                 
                 <p>
@@ -189,7 +189,7 @@
                 </ul>
                 
                 <p>
-                    That's everything we need to solve the issue.
+                    Which is everything we need to solve the issue.
                 </p>
                 
                 <h2>The Interpreter Itself</h2>
@@ -402,7 +402,7 @@ OP_HALT           ; Stop the program</code></pre>
                 <h3>Static Typing vs Dynamic Typing</h3>
                 
                 <p>
-                    Static typing adds complexity with type checking and more sophisticated error handling, but I felt that the benefits outweighed dynamic typing witb comprehensive bug catching and clear intent in code.
+                    Static typing adds complexity with type checking and more sophisticated error handling, but I felt that the benefits outweighed dynamic typing with comprehensive bug catching and clear intent in code.
                 </p>
                 
                 <p>
@@ -416,7 +416,7 @@ OP_HALT           ; Stop the program</code></pre>
                 </p>
                 
                 <p>
-                    For Phase, I prioritized modularity and extensibility over raw performance. Besides, Phase's small scope means there wouldn't be any noticeable different between the two architectures.
+                    For Phase, I prioritized modularity and extensibility over raw performance. Besides, Phase's small scope means there wouldn't be any noticeable difference between the two architectures.
                 </p>
                 
                 <h3>Python vs C</h3>
@@ -426,13 +426,13 @@ OP_HALT           ; Stop the program</code></pre>
                 </p>
                 
                 <p>
-                    However, I realized it felt almost too easy to implement it in Python, so I decided to challenge myself by writing it fully in C, which greatly accelerated my learning by forcing me to confront concepts I was unfamiliar with at the time.
+                    However, I realized it felt almost too simple to implement it in Python, as if I were cheating myself in a way, so I decided to challenge myself by writing it fully in C, which greatly accelerated my learning by forcing me to confront concepts I was unfamiliar with at the time.
                 </p>
                 
                 <h2>What's Next</h2>
                 
                 <p>
-                    Phase is finished for now, with enough features to write a variety of small, useful programs. For example, here is a fibonacci sequence program:
+                    Phase is finished, with enough features to write a variety of small practical programs. For example, here is a fibonacci sequence program:
                 </p>
                 
                 <pre><code class="language-rust">func fibonacci(n: int): void {
@@ -453,14 +453,13 @@ entry {
 }</code></pre>
                 
                 <p>
-                    But if I were to revisit it in the future, these would be the next features on my roadmap:
+                    But if I were to revisit it in the future, these would be the next features I would work on:
                 </p>
                 
                 <ul>
                     <li>An arena memory allocator</li>
                     <li>JIT bytecode compilation</li>
                     <li>Standard input</li>
-                    <li>Aggregate data types</li>
                 </ul>
                 
                 <h2>What I Learned</h2>
@@ -475,7 +474,7 @@ entry {
                 </ul>
                 
                 <p>
-                    More importantly, it demonstrated the power of project-based learning; I couldn't have learned all these skills if I didn't actually create my language.
+                    More importantly, it demonstrated the power of project-based learning; I couldn't have learned all these skills if I didn't actually create a programming language.
                 </p>
                 
                 <p>

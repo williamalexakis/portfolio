@@ -6,13 +6,13 @@
     <link>https://williamalexakis.com/blog</link>
     <atom:link href="https://williamalexakis.com/blog/feed.xml" rel="self" type="application/rss+xml"/>
     <language>en-us</language>
-    <lastBuildDate>Fri, 12 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 9 Feb 2025 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Writing My Own Programming Language</title>
       <description>How I built Phase, a statically-typed bytecode-interpreted language, from scratch to bridge the gap between high-level and low-level languages.</description>
       <link>https://williamalexakis.com/blog/posts/writing-phase.html</link>
       <guid isPermaLink="true">https://williamalexakis.com/blog/posts/writing-phase.html</guid>
-      <pubDate>Fri, 12 Apr 2025 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 4 Dec 2025 00:00:00 +0000</pubDate>
       <author>w.alexakis@icloud.com (William Alexakis)</author>
     </item>
   </channel>
