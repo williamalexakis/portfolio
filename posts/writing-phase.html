@@ -10,21 +10,20 @@
     <meta name="keywords" content="Phase, programming language, interpreter, compiler, bytecode, virtual machine, lexer, parser, type checker, static typing, C programming">
     <meta name="author" content="William Alexakis">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://williamalexakis.com/blog/posts/writing-phase.html">
+    <link rel="canonical" href="https://williamalexakis.com/posts/writing-phase.html">
 
     <meta name="title" content="Writing My Own Programming Language • William Alexakis">
     <meta property="og:title" content="Writing My Own Programming Language • William Alexakis">
     <meta property="og:description" content="How I built Phase, my own interpreted programming language, from scratch to bridge the gap between high-level and low-level languages.">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://williamalexakis.com/blog/posts/writing-phase.html">
+    <meta property="og:url" content="https://williamalexakis.com/posts/writing-phase.html">
     <meta property="og:image" content="https://williamalexakis.com/assets/icons/social-share.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="William Alexakis">
     <meta property="og:locale" content="en_US">
     <meta property="article:author" content="William Alexakis">
-    <meta property="article:published_time" content="2025-04-12">
-    <meta property="article:modified_time" content="2025-12-07">
+    <meta property="article:published_time" content="2025-12-04">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Writing My Own Programming Language • William Alexakis">
@@ -38,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"/>
-    <link rel="stylesheet" href="../../styles.css" />
+    <link rel="stylesheet" href="../styles.css" />
     <link rel="stylesheet" href="../blog-styles.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
 
@@ -57,13 +56,13 @@
                 "image": "https://williamalexakis.com/assets/icons/social-share.png",
                 "sameAs": [
                     "https://github.com/williamalexakis",
-                    "https://williamalexakis.com/blog"
+                    "https://williamalexakis.com"
                 ]
             },
             {
                 "@type": "BlogPosting",
-                "@id": "https://williamalexakis.com/blog/posts/writing-phase.html#post",
-                "url": "https://williamalexakis.com/blog/posts/writing-phase.html",
+                "@id": "https://williamalexakis.com/posts/writing-phase.html#post",
+                "url": "https://williamalexakis.com/posts/writing-phase.html",
                 "headline": "Writing My Own Programming Language",
                 "description": "How I built Phase, my own interpreted programming language, from scratch to bridge the gap between high-level and low-level languages.",
                 "author": {
@@ -72,11 +71,10 @@
                 "publisher": {
                     "@id": "https://williamalexakis.com/#person"
                 },
-                "datePublished": "2025-04-12",
-                "dateModified": "2025-12-07",
+                "datePublished": "2025-12-04",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
-                    "@id": "https://williamalexakis.com/blog/posts/writing-phase.html"
+                    "@id": "https://williamalexakis.com/posts/writing-phase.html"
                 },
                 "image": "https://williamalexakis.com/assets/icons/social-share.png",
                 "inLanguage": "en",
@@ -101,21 +99,17 @@
 
 <body>
     <header class="site-header">
-        <div class="wrapper header__inner">
-            <p class="logo">William Alexakis • Blog</p>
-
-            <nav class="nav">
-                <a href="/">Portfolio</a>
-            </nav>
+        <div class="wrapper header__top">
+            <p class="logo">William Alexakis</p>
         </div>
     </header>
 
     <main class="wrapper sections">
         <article class="blog-post">
-            <a href="/blog" class="back-link">← Back to Blog</a>
+            <a href="/" class="back-link">← Back</a>
 
             <h1>Writing My Own Programming Language</h1>
-            <div class="blog-meta">4/12/2025</div>
+            <div class="blog-meta">4 Dec 2025</div>
             
             <div class="blog-content">
                 <h2>How Phase Started</h2>
@@ -265,7 +259,7 @@ NEWLINE</code></pre>
                 <h3>2. Parser</h3>
                 
                 <p>
-                    Next, the parser takes the stream of tokens the lexer produced and constructs an Abstract Syntax Tree (AST) — a hierarchy of the grammatical structure of the program.
+                    Next, the parser takes the stream of tokens the lexer produced and constructs an Abstract Syntax Tree (AST) -- a hierarchy of the structure of the program.
                 </p>
                 
                 <p>

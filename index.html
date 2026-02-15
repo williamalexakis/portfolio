@@ -13,7 +13,7 @@
         <meta name="keywords" content="William Alexakis, software engineer, portfolio, systems programming, programming languages, compilers, interpreters, C, Python, Django, backend development">
         <meta name="author" content="William Alexakis">
         <link rel="canonical" href="https://williamalexakis.com/">
-        <link rel="alternate" type="application/rss+xml" title="William Alexakis Blog RSS Feed" href="https://williamalexakis.com/blog/feed.xml">
+        <link rel="alternate" type="application/rss+xml" title="William Alexakis Blog RSS Feed" href="https://williamalexakis.com/feed.xml">
 
         <meta name="robots" content="index, follow">
         <link rel="sitemap" type="application/xml" href="/sitemap.xml">
@@ -78,8 +78,7 @@
                     "email": "mailto:w.alexakis@icloud.com",
                     "image": "https://williamalexakis.com/assets/icons/social-share.png",
                     "sameAs": [
-                        "https://github.com/williamalexakis",
-                        "https://williamalexakis.com/blog"
+                        "https://github.com/williamalexakis"
                     ],
                     "knowsAbout": [
                         "Python",
@@ -99,82 +98,52 @@
 
     <body>
         <header class="site-header">
-            <div class="wrapper header__inner">
+            <div class="wrapper header__top">
                 <p class="logo">William Alexakis</p>
-
-                <nav class="nav">
-                    <a href="/blog">Blog</a>
-                </nav>
+            </div>
+            <div class="wrapper header-links">
+                <a href="assets/docs/William_Alexakis_CV.pdf" download target="_blank" rel="noreferrer">CV</a>
+                <span class="header-sep">•</span>
+                <a href="mailto:w.alexakis@icloud.com">Email</a>
+                <span class="header-sep">•</span>
+                <a href="https://github.com/williamalexakis" target="_blank" rel="noreferrer">GitHub</a>
+                <span class="header-sep">•</span>
+                <a href="https://www.linkedin.com/in/williamalexakis" target="_blank" rel="noreferrer">LinkedIn</a>
             </div>
         </header>
-        
+
         <main class="wrapper sections">
-            <section class="hero-bio">
-                <h1>I'm a 15-year-old student software engineer.
-                    <br />
-                    I write systems software from scratch.
-                </h1>
-                
-                <div class="hero-links">
-                    <a href="assets/docs/William_Alexakis_CV.pdf" download target="_blank" rel="noreferrer">CV</a>
-                    <a href="mailto:w.alexakis@icloud.com">Email</a>
-                    <a href="https://github.com/williamalexakis" target="_blank" rel="noreferrer">GitHub</a>
-                    <a href="https://www.linkedin.com/in/williamalexakis" target="_blank" rel="noreferrer">LinkedIn</a>
-                </div>
+            <section id="about" class="section-anchor">
+                <h2>About</h2>
+
+                <p>I'm a Year 11 student from Greece.</p>
+                <p>I'm mainly interested in systems software.</p>
+                <p>Competitively, I placed 1st in the Line Robot Competition at <a href="https://stcatshacks.org" download target="_blank" rel="noreferrer">StCatsHacks</a> for three consecutive years as my team's lead programmer, and I'm a member of the STEM Racing (F1 in Schools) team <a href="https://thatonmotorsport.com" download target="_blank" rel="noreferrer">Thaton Motorsport</a>. I'm also preparing for the USA Computing Olympiad and the Canadian Coding Competition.</p>
+                <p>On top of that, I've started work on my next project: writing a decoder-only transformer inference engine for CPU in C++, with as few dependencies as possible, since I've recently been interested in LLM infrastructure.</p>
+                <p>Aside from programming, I also enjoy writing and thinking critically about various modern topics ranging from tech to geopolitics.</p>
+                <p>My plan is to take Maths AA HL, Physics HL, and CS HL in the IB Programme next year, before I study Computer Science in university abroad.</p>
             </section>
 
             <section id="projects" class="section-anchor">
                 <h2>Projects</h2>
-                
-                <div class="skills-group">
+
+                <div class="project-entry">
                     <h3>Phase • 2025</h3>
-
-                    <div class="hero-links">
+                    <p>A statically-typed bytecode-interpreted programming language handwritten in C with zero dependencies.</p>
+                    <div class="project-links">
                         <a href="https://github.com/williamalexakis/phase" target="_blank" rel="noreferrer">Repository</a>
-                        <a href="https://williamalexakis.com/blog/posts/writing-phase" target="_blank" rel="noreferrer">Blog Post</a>
+                        <span class="project-sep">•</span>
+                        <a href="/posts/writing-phase.html">Blog Post</a>
                     </div>
-
-                    <p>A bytecode-interpreted programming language handwritten in C17 and designed to combine expressiveness with explicitness.</p>
-
-                    <ul class="skills-list">
-                        <li>
-                            <span>Supports functions, conditionals, loops, tuple destructuring, and 5 primitive types (string, int, float, bool, void).</span>
-                        </li>
-
-                        <li>
-                            <span>Implemented 21 error types with source-mapped diagnostics displaying exact file/line/column, visual markers, and diff-style fix suggestions.</span>
-                        </li>
-
-                        <li>
-                            <span>Engineered a full compilation pipeline (lexer → recursive-descent parser → static type-checker → bytecode generator → 25-opcode stack-based virtual machine executor).</span>
-                        </li>
-                    </ul>
                 </div>
             </section>
 
-            <section id="achievements" class="section-anchor">
-                <h2>Achievements</h2>
+            <section id="blog" class="section-anchor">
+                <h2>Blog</h2>
 
-                <div class="skills-group">
-                    <ul class="skills-list">
-                        <li>
-                            <span>Consecutive three-time 1st Place winner of the Line Robot Competition at <a href="https://stcatshacks.org" download target="_blank" rel="noreferrer">StCatsHacks</a> (2023 — 2025) as lead programmer.</span>
-                        </li>
-
-                        <li>
-                            <span>Completed GCSE Computer Science a year early with a Grade 9.</span>
-                        </li>
-                    </ul>
+                <div class="blog-entries">
+                    <a href="/posts/writing-phase.html">Writing My Own Programming Language</a>
                 </div>
-            </section>
-
-            <section id="about" class="section-anchor">
-                <h2>About</h2>
-                
-                <p>I'm a Year 11 student from Greece.</p>
-                <p>I'm interested in systems software, though I haven't yet decided on a specialization. Much of my work is self-directed and project-based; I learn best through building systems just above my scope.</p>
-                <p>I'm currently preparing for the USACO, CCC, and my next project which involves LLM infrastructure.</p>
-                <p>I plan to study Computer Science in university abroad.</p>
             </section>
 
         </main>
