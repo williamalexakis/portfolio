@@ -1,7 +1,6 @@
 :root {
   color-scheme: dark;
-  font-family: "Space Grotesk", "IBM Plex Mono", "Segoe UI", system-ui,
-    sans-serif;
+  font-family: "IBM Plex Serif", "Georgia", "Times New Roman", serif;
   --bg: #020408;
   --fg: #f5f7ff;
   --border-strong: rgba(245, 247, 255, 0.15);

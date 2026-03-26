@@ -75,30 +75,43 @@
 }
 
 .blog-content code {
-    background: #121212;
+    background: rgba(255, 255, 255, 0.04);
     padding: 0.15rem 0.4rem;
-    border-radius: 3px;
-    font-family: 'Courier New', 'SF Mono', 'Consolas', monospace;
-    font-size: 0.9em;
-    color: #9ad9ff;
+    border-radius: 2px;
+    font-family: 'IBM Plex Mono', 'SF Mono', 'Consolas', monospace;
+    font-size: 0.85em;
+    color: #dce0ea;
 }
 
 .blog-content pre {
-    background: #121212;
-    border: 1px solid var(--border-strong);
-    padding: 1.25rem;
-    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.03);
+    border-left: 2px solid rgba(154, 217, 255, 0.25);
+    padding: 1.25rem 1.5rem;
+    border-radius: 0;
     overflow-x: auto;
     margin: 1.75rem 0;
-    line-height: 1.5;
+    line-height: 1.6;
 }
 
 .blog-content pre code {
     background: none;
     padding: 0;
-    font-size: 0.9rem;
-    color: var(--fg);
+    font-size: 0.85rem;
+    color: #e2e6f0;
 }
+
+.syn-kw   { color: #ff4d8a; }
+.syn-type { color: #e05555; }
+.syn-str  { color: #5cb8ff; }
+.syn-num  { color: #c0a0f0; }
+.syn-fn   { color: #2de370; }
+.syn-cmt  { color: #7a8496; font-style: italic; }
+.syn-pink { color: #ff6b9d; }
+.syn-cyan { color: #5cb8ff; }
+.syn-grn  { color: #50d07d; }
+.syn-red  { color: #e05555; }
+.syn-amb  { color: #e8a655; }
+.syn-hex  { color: #ffd000; }
 
 .blog-content ul,
 .blog-content ol {
@@ -133,14 +146,6 @@
     border-color: var(--link-hover);
 }
 
-
-.blog-content .comment {
-    color: #6b7280;
-}
-
-.blog-content .keyword {
-    color: #9ad9ff;
-}
 
 @media (max-width: 640px) {
     .blog-post h1 {
