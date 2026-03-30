@@ -1,15 +1,15 @@
 :root {
   color-scheme: dark;
   font-family: "IBM Plex Serif", "Georgia", "Times New Roman", serif;
-  --bg: #020408;
-  --fg: #f5f7ff;
-  --border-strong: rgba(245, 247, 255, 0.15);
-  --border-soft: rgba(245, 247, 255, 0.08);
-  --border-hover: rgba(245, 247, 255, 0.6);
-  --border-mid: rgba(245, 247, 255, 0.3);
-  --link: #9ad9ff;
-  --link-hover: #ebfbff;
-  --link-underline: rgba(154, 217, 255, 0.45);
+  --bg: #111110;
+  --fg: #f5f5f5;
+  --border-strong: rgba(245, 245, 245, 0.15);
+  --border-soft: rgba(245, 245, 245, 0.08);
+  --border-hover: rgba(245, 245, 245, 0.6);
+  --border-mid: rgba(245, 245, 245, 0.3);
+  --link: #58a6ff;
+  --link-hover: #e8e8e8;
+  --link-underline: rgba(74, 156, 255, 0.75);
 }
 
 *,
@@ -171,4 +171,3 @@ a:focus-visible {
     padding: 2rem 0;
   }
 }
-
