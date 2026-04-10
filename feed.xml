@@ -8,10 +8,10 @@
     <atom:link href="https://williamalexakis.com/feed.xml" rel="self" type="application/rss+xml"/>
     <item>
       <title>Writing My Own Programming Language</title>
-      <link>https://williamalexakis.com/posts/writing-phase</link>
-      <guid>https://williamalexakis.com/posts/writing-phase</guid>
+      <link>https://williamalexakis.com/writing-phase</link>
+      <guid>https://williamalexakis.com/writing-phase</guid>
       <pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate>
-      <description>How I wrote Phase, my own bytecode-interpreted programming language.</description>
+      <description>How I wrote my own statically-typed bytecode-interpreted programming language in C with zero dependencies.</description>
     </item>
   </channel>
 </rss>
