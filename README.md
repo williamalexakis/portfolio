@@ -1,3 +1,3 @@
-# My Personal Portfolio Site
+# My Personal Website
 
 <https://williamalexakis.com>

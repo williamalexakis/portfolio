@@ -24,7 +24,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="William Alexakis logo and name">
     <meta property="og:site_name" content="William Alexakis">
-    <meta property="article:modified_time" content="2026-04-10T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-12T00:00:00+00:00">
     <meta property="og:locale" content="en_US">
     <meta property="article:author" content="William Alexakis">
     <meta property="article:published_time" content="2025-12-04T00:00:00+00:00">
@@ -34,6 +34,11 @@
     <meta name="twitter:description" content="How I wrote my own statically-typed bytecode-interpreted programming language in C with zero dependencies.">
     <meta property="twitter:image" content="https://williamalexakis.com/icons/social-share.png">
     <meta name="twitter:image:alt" content="William Alexakis monogram logo">
+    <meta name="twitter:creator" content="@w_alexakis">
+
+    <link rel="me" href="https://github.com/williamalexakis">
+    <link rel="me" href="https://x.com/w_alexakis">
+    <link rel="me" href="https://www.linkedin.com/in/williamalexakis">
 
     <meta name="theme-color" content="#111110">
     <meta name="color-scheme" content="dark">
@@ -52,9 +57,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@400;500;600&display=swap" as="style">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/styles.css" />
-    <link rel="stylesheet" href="/blog-styles.css" />
+    <link rel="stylesheet" href="/essay-styles.css" />
 
     <script type="application/ld+json">
     {
@@ -82,15 +88,17 @@
                 "image": "https://williamalexakis.com/icons/social-share.png",
                 "sameAs": [
                     "https://github.com/williamalexakis",
-                    "https://www.linkedin.com/in/williamalexakis"
+                    "https://www.linkedin.com/in/williamalexakis",
+                    "https://x.com/w_alexakis"
                 ]
             },
             {
-                "@type": "BlogPosting",
-                "@id": "https://williamalexakis.com/writing-phase#post",
+                "@type": "Article",
+                "@id": "https://williamalexakis.com/writing-phase#essay",
                 "url": "https://williamalexakis.com/writing-phase",
                 "headline": "Writing My Own Programming Language",
                 "description": "How I wrote my own statically-typed bytecode-interpreted programming language in C with zero dependencies.",
+                "abstract": "A retrospective on building Phase, a statically-typed bytecode-interpreted programming language written from scratch in C with zero dependencies. Walks through the lexer, parser, type checker, bytecode compiler, and virtual machine.",
                 "author": {
                     "@id": "https://williamalexakis.com/#person"
                 },
@@ -98,13 +106,43 @@
                     "@id": "https://williamalexakis.com/#person"
                 },
                 "datePublished": "2025-12-04T00:00:00+00:00",
-                "dateModified": "2026-04-10T00:00:00+00:00",
+                "dateModified": "2026-04-12T00:00:00+00:00",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
                     "@id": "https://williamalexakis.com/writing-phase"
                 },
                 "image": "https://williamalexakis.com/icons/social-share.png",
                 "inLanguage": "en",
+                "isAccessibleForFree": true,
+                "wordCount": 1425,
+                "articleSection": "Systems Software",
+                "about": [
+                    {
+                        "@type": "Thing",
+                        "name": "C (programming language)",
+                        "sameAs": "https://www.wikidata.org/wiki/Q15777"
+                    },
+                    {
+                        "@type": "Thing",
+                        "name": "Compiler",
+                        "sameAs": "https://www.wikidata.org/wiki/Q47506"
+                    },
+                    {
+                        "@type": "Thing",
+                        "name": "Interpreter (computing)",
+                        "sameAs": "https://www.wikidata.org/wiki/Q740380"
+                    },
+                    {
+                        "@type": "Thing",
+                        "name": "Bytecode",
+                        "sameAs": "https://www.wikidata.org/wiki/Q189376"
+                    },
+                    {
+                        "@type": "Thing",
+                        "name": "Programming language",
+                        "sameAs": "https://www.wikidata.org/wiki/Q9143"
+                    }
+                ],
                 "keywords": [
                     "Phase",
                     "programming language",
@@ -133,7 +171,7 @@
                         "@type": "ListItem",
                         "position": 2,
                         "name": "Writings",
-                        "item": "https://williamalexakis.com/#blog"
+                        "item": "https://williamalexakis.com/#writings"
                     },
                     {
                         "@type": "ListItem",
@@ -155,50 +193,32 @@
     </header>
 
     <main class="wrapper sections">
-        <article class="blog-post">
+        <article class="essay">
             <a href="/" class="back-link">← Back</a>
 
             <h1>Writing My Own Programming Language</h1>
-            <div class="blog-meta">
+            <div class="essay-meta">
                 <img src="/icons/monogram-small.png" alt="WA" class="author-mark" width="32" height="32">
-                <span>4 Dec 2025</span>
+                <time datetime="2025-12-04">4 Dec 2025</time>
             </div>
-            
-            <div class="blog-content">
-                <h2>How Phase Started</h2>
+
+            <div class="essay-content">
+                <h2>Why I Wrote My Own Programming Language</h2>
                 
                 <p>
-                    Last summer, I was learning C; I liked the control it provided but I kept being frustrated by its lack of clarity, and I frequently found myself having to write many lines of code just to accomplish something that was much simpler in Python.
+                    Last summer, I spent some time learning C. I liked the low-level control it provided but I was frustrated by the lack of clarity in the code as my projects grew more complex. And then I'd switch back to Python for some scripting, and while it was simple and familiar, I quickly realized that I missed the safety and certainty of static typing in C that just couldn't be supplemented by type annotations.
                 </p>
                 
                 <p>
-                    But then I'd switch back to Python for some scripting, and while the clarity of the syntax was refreshing, I became frustrated with the lack of control and I missed the certainty of static typing and performance awareness in C.
+                    So I was basically stuck between Python which was familiar yet limiting, and C which was unrestrictive yet convoluted (at that time). This led me to think about what I really wanted altogether in one language, thus giving me the idea of creating my own called Phase -- a statically-typed bytecode-interpreted programming language that was designed to combine the expressiveness of high-level languages (like Python) with the explicitness of lower-level languages (like C). I chose the name 'Phase' because it represents an active shift between language types, and pretty much every other distinct name I came up with was already taken.
                 </p>
                 
                 <p>
-                    I was basically stuck between Python and C, which inspired me to imagine what I really wanted in a language. And so, I decided to create my own: Phase -- a statically-typed bytecode-interpreted programming language that combines the expressiveness of high-level languages (like Python) with the explicitness of lower-level languages (like C).
+                    As for the toolchain, even though there are various powerful compiler tools that already exist like LLVM and YACC, I decided to fully handwrite this project myself because it let me shape the language exactly how I envisioned it. And it really forced me to learn proper compiler/interpreter theory; I challenged myself to do things the hard way so I could develop my skills the most.
                 </p>
                 
                 <p>
-                    I chose the name 'Phase' because it represents the shift between language levels, and pretty much every other unique name was already taken.
-                </p>
-                
-                <p>
-                    Also, despite the existence and popularity of tools like LLVM that could've made this a lot easier, every single component of Phase was fully handwritten by me.
-                </p>
-                
-                <p>
-                    This is because I wanted to understand each and every part of the pipeline, which allowed me to to shape the language exactly how I envisioned it, and it challenged me to actually learn compiler theory.
-                </p>
-                
-                <h2>Diagnostics</h2>
-                
-                <p>
-                    An additional yet important thing is that I put much thought into Phase's error system. Since this was, in some way, my ideal language, I realized that it had to also solve my frustrations with vague errors that I experienced in other languages. So I spent some time creating an informative and visually appealing diagnostics manager, partially inspired by Rust's errors.
-                </p>
-                
-                <p>
-                    Here's an example:
+                    Also, another important aspect of Phase that I put much thought into was the error system. Since this was, in some way, my ideal language, I realized that it had to also solve my frustrations with vague errors that I've had in other language -- for example, C's segfault and Python's convoluted messages. So I spent some time creating an informative and visually appealing diagnostics manager which was partially inspired by Rust's errors. Here's an example:
                 </p>
                 
                 <pre><code class="language-error">┏ Fatal Error [102]: Expected ')'.
@@ -213,35 +233,26 @@
 ┃ +     out("a, b, c:")</code></pre>
                 
                 <p>
-                    This message tells you what went wrong, where it went wrong, why it went wrong, and how it could be fixed -- essentially everything you need to solve the issue.
+                    This message tells you what went wrong, where it went wrong, why it went wrong, and how it could be fixed -- all in one message, and essentially everything you need to solve the issue.
                 </p>
                 
-                <h2>The Interpreter Itself</h2>
+                <h2>How the Interpreter Works</h2>
                 
                 <p>
-                    Phase's interpreter has several stages:
+                    Phase's interpreter has several stages:<br/>
+                    <strong>IN > Lexer > Parser > Type Checker > Bytecode Generator > Virtual Machine > OUT</strong>
                 </p>
                 
-                <p>Lexer --> Parser --> Type Checker --> Bytecode Generator --> Virtual Machine</p>
-                
-                <p>
-                    To demonstrate the process, we'll follow this basic line of Phase code:
+                <p class="standalone">
+                    To demonstrate the process, we'll follow this basic line of Phase code from beginning to end:
                 </p>
                 
                 <pre><code class="language-phase">out("Hello world!")</code></pre>
                 
-                <p>
-                    From beginning to end.
-                </p>
-                
                 <h3>1. Lexer</h3>
                 
                 <p>
-                    The lexer (short for lexical analyzer) is the very first stage, taking in raw source code -- an arbitrary character string -- and breaking it down into tokens that represent keywords, operators, types, and literals.
-                </p>
-                
-                <p>
-                    Our previous line of code will get tokenized into this form:
+                    The lexer (short for lexical analyzer) is the very first stage, taking in raw source code as an arbitrary character string, and breaking it down into tokens that represent keywords, operators, types, and literals. So our line of source code will be translated into this form:
                 </p>
                 
                 <pre><code class="language-tokens">OUT
@@ -251,37 +262,17 @@ RPAREN
 NEWLINE</code></pre>
                 
                 <p>
-                    These tokens are now organized and separated -- much easier to process than the original line of code.
-                </p>
-                
-                <p>
-                    The lexer also handles details like skipping whitespace, distinguishing between keywords and identifiers, and handling string literals with escape sequences.
-                </p>
-                
-                <p>
-                    In concept, it's simple since it's just processing strings from a while, which is what I thought until I found it was probably the most tedious and boring aspect of the whole project to design and implement correctly.
+                    Now we have these organized tokens that separate each component of the string, making it much easier to process than the original line of code. Apart from that, the lexer also handles other cases like skipping whitespace, distinguishing between keywords and identifiers, and string literals with escape sequences. In concept, the lexer's pretty simple since it's just processing strings from a file, which is what I thought until I found that it was probably the most tedious and boring part of the whole project to design and actually make it work.
                 </p>
                 
                 <h3>2. Parser</h3>
                 
                 <p>
-                    Next, the parser takes the stream of tokens the lexer produced and constructs an Abstract Syntax Tree (AST) -- a hierarchy of the structure of the program.
-                </p>
-                
-                <p>
-                    I specifically implemented a recursive-descent parser, wherein each grammar rule is designated to a specific function. The parser starts at the top (program) level, and goes through each sublevel until there's none left.
-                </p>
-                
-                <p>
-                    So parsing our tokens gives us these nodes:
+                    Next, the parser takes the stream of tokens the lexer produced and constructs an Abstract Syntax Tree (AST) -- the hierarchical structure of the program file. I specifically made a recursive-descent parser, where each grammar rule is designated to a specific function, and the parser starts at the top (program) level while going through each sublevel until there's none left. So parsing our tokens gives us this linear tree of nodes that can be easily processed:
                 </p>
                    
                 <pre><code class="language-ast">STATEMENT (OUT)
         ╰ EXPRESSION (STRING) ["Hello world!"]</code></pre>
-                
-                <p>
-                    And our list of tokens from before is now an organized linear structure that can be easily followed.
-                </p>
                 
                 <p>
                     The parser is also where syntax errors are caught and raised. For example, if you forget a closing parenthesis in your code, the parser catches this based on the previous tokens it encounters -- in this case, an opening parenthesis, so it expects a closing one on the same line.
@@ -290,21 +281,13 @@ NEWLINE</code></pre>
                 <h3>3. Type Checker</h3>
                 
                 <p>
-                    This is where Phase's static typing is enforced through semantic verification. The type checker walks along the AST and verifies that all operations are correct, so you can't mismatch variable types in assignment or arithmetic.
-                </p>
-                
-                <p>
-                    The type checker is separate from the lexer because semantics are different from syntax. Think of it like arranging words in a sentence (syntax) versus what the sentence actually means (semantics), so while the sentence "colourless green ideas sleep furiously" is correct with its word structure, it doesn't actually mean anything.
-                </p>
-                
-                <p>
-                    To demonstrate, this line of code is syntactically correct:
+                    This is where Phase's static typing is enforced through semantic verification, where the type checker 'walks' along the AST and verifies that all operations are correct, so you can't mismatch variable types in assignment or arithmetic. The type checker is different from the lexer because it checks semantics while the lexer checks syntax; an analogy would be like arranging words in a sentence (syntax) versus what the sentence actually means (semantics), so for example, while the sentence "colourless green ideas sleep furiously" is correct with its word ordering (good syntax), it doesn't actually mean anything (bad semantics). To demonstrate, this line of code is syntactically correct:
                 </p>
                 
                 <pre><code class="language-phase">let x: int = "Hi"</code></pre>
                 
                 <p>
-                    But we still get an error:
+                    Yet we still get an error because the code is semantically wrong (the types are mismatched):
                 </p>
                 
                 <pre><code class="language-error">┏ Fatal Error [108]: Type mismatch.
@@ -319,21 +302,13 @@ NEWLINE</code></pre>
 ┃ +     let x: int = 0</code></pre>
                 
                 <p>
-                    Because the code is semantically wrong due to a type mismatch. However, our 'Hello world!' code is a statement and accepts any expression as an argument because it will always be converted to a string, so the type checker emits it as is.
+                    But as a note, the type checker doesn't check every single thing -- for example our 'Hello world!' code we're following is a statement that accepts any expression type as an argument because it will always be converted to a string, so the type checker emits it as-is.
                 </p>
                 
                 <h3>4. Bytecode Generator</h3>
                 
                 <p>
-                    The type-checked AST is now taken by the bytecode generator and compiled into bytecode: a custom, Assembly-like instruction set that's much simpler to execute than the AST itself.
-                </p>
-                
-                <p>
-                    For Phase, I specifically implemented a stack-based architecture, meaning that operations push and pop values from a storage 'stack' -- in the order of Last-In, First-Out (LIFO).
-                </p>
-                
-                <p>
-                    Inputing our AST now gives us this hexadecimal bytecode:
+                    Moving on, the type-checked AST is now taken by the bytecode generator and compiled into a custom Assembly-like instruction set called bytecode, which is much quicker and simpler to execute than reading the AST itself. For Phase specifically, I wrote in a stack-based architecture, meaning that operations push and pop values from storage in the order of Last In, First Out (LIFO). I designed the actual instruction set to contain about 25 different opcodes, which was quite fun since I was making my own mini ASM codes with total virtual low-level control. Anyways, inputting our AST now gives us this hexadecimal bytecode:
                 </p>
                 
                 <pre><code class="language-hex">00 00 00
@@ -343,68 +318,44 @@ NEWLINE</code></pre>
                     Which represents these instructions of opcodes and constant values:
                 </p>
                 
-                <pre><code class="language-asm">OP_PUSH_CONST 0   ; Push 'Hello world!' onto the stack
+                <pre><code class="language-asm">OP_PUSH_CONST 0   ; Push constant 0 ('Hello world!') onto the stack
 OP_PRINT          ; Print it
-OP_HALT           ; Stop the program</code></pre>
-                
-                <p>
-                    I designed Phase's instruction set to contain abou 25 different opcodes. Bytecode generation was surprisingly interesting, and, in fact, it was one of my favourite aspects of creating Phase because of the total low-level design control it provided.
-                </p>
+OP_HALT           ; Terminate the program</code></pre>
                 
                 <h3>5. Virtual Machine</h3>
                 
                 <p>
-                    Finally, the pipeline ends with the virtual machine, which directly executes the bytecode. It maintains an instruction pointer tracking the next instruction to execute, a stack for temporary values and computations, and a global environment for holding variables.
-                </p>
-                
-                <p>
-                    The VM functions like a very simple CPU running a fetch-decode-execute cycle: it reads an instruction, decides what operation to perform, runs it, and moves onto the next instruction.
-                </p>
-                
-                <p>
-                    So, we finally produce an output from our code:
+                    Finally, the pipeline ends with the virtual machine, which directly executes the bytecode sequence. Specifically, it maintains an instruction pointer tracking the next opcode to execute, a stack for temporary values and computations, and a global environment for holding variables. It basically works like a very simple CPU running a fetch-decode-execute cycle -- it reads an instruction, decides what operation to perform, runs it, and moves onto the next instruction. And like the bytecode generator, it was also pretty enjoyable to design and write the VM because I was finally performing the actual execution of my source code after only having debug info to look at for months. So we finally get our code's output:
                 </p>
                 
                 <pre><code class="language-none">Hello world!</code></pre>
                 
+                <h2>What Design Decisions I Made</h2>
+                
                 <p>
-                    Creating the VM was a pretty good learning experience for interpreter design, and it was also quite satisfying to get to program the actual outputs for my source code after working purely with debug info up to that point.
+                    I probably spent more time dealing with Phase's design and tradeoffs than actually programming it, so here are some of the more important decisions I went through.
                 </p>
                 
-                <h2>Design Decisions</h2>
-                
                 <p>
-                    I probably spent more time dealing with Phase's design and tradeoffs than actually programming it. Some of the more important decisions I went through were:
+                    <strong>Interpreter versus transpiler.</strong> Originally, Phase was meant to be a transpiler that converted source code to C code, which was actually the first working version of Phase that I wrote. But as I started to test my first Phase programs, the build-run pipeline was so tedious that I had to replace the backend's code generator with a bytecode generator with a VM, even though I was planning to show more low-level knowledge via the transpiler.
                 </p>
                 
-                <h3>Interpreter versus Transpiler</h3>
-                
                 <p>
-                    Originally, Phase was meant to be a transpiler that converted source code to C code, before being built and executed -- which was actually the first functioning implementation of Phase that I wrote. However, as I tested my first Phase programs, I realized that the build-run pipeline was very tedious as I had to compile code twice in a row and only then execute it. Even though I felt that a transpiler would demonstrate more low-level knowledge, I decided to convert Phase to an interpreter by switching out the backend for a bytecode generator and a VM, while keeping the same lexer and parser.
+                    <strong>Static typing versus dynamic typing.</strong> Static typing makes things harder because you have to implement type checking and more sophisticated error handling, but I felt that the benefits outweighed dynamic typing with bug-catching and explicitness in code. I originally implemented C-style variable type declarations because they were simple and I was used to them, but after some feedback from a person online, I replaced them with Rust-style declarations to future-proof parsing for the updates that came soon after.
                 </p>
-                
-                <h3>Static Typing versus Dynamic Typing</h3>
-                
+
                 <p>
-                    Static typing makes things harder because you have to implement type checking and more sophisticated error handling, but I felt that the benefits outweighed dynamic typing with bug-catching and explicitness in code. I originally implemented C-style variable type declarations because they were simple and I was used to them, but after some feedback from a person online, I replaced them with Rust-style declarations to better support the updates that came soon after.
+                    <strong>Stack-based VM versus register-based VM.</strong> I chose a stack-based architecture over register-based because it's much simpler to implement, and while it's slower because of more stack operations, there wouldn't be any noticeable difference between the two architectures for a language this small.
                 </p>
-                
-                <h3>Stack-Based VM versus Register-Based VM</h3>
-                
+
                 <p>
-                    I chose a stack-based architecture over register-based because it's much simpler to implement, but it's also slower because of more stack operations. But either way, there wouldn't be any noticeable difference between the two architectures for a language this small.
-                </p>
-                
-                <h3>Python versus C</h3>
-                
-                <p>
-                    I created the first prototype of Phase (called Luma at the time) in Python since I knew it much better than C, and I got it working in a few days with extremely basic features. However, writing it in Python made me feel as if I were cheating myself in a way, so I decided to challenge myself by writing it fully in C, which sped up my learning by forcing me to confront concepts I was unfamiliar with at the time.
+                    <strong>Python versus C.</strong> I created the first prototype of Phase (called Luma at that time) in Python since I was much more familiar with it than C, and I got it working in a few days with some very basic features. But writing it in Python made me feel as if I were cheating in a way, so I decided to challenge myself by writing it fully in C so I could speed up my learning by forcing me to confront various concepts I didn't know about.
                 </p>
                 
                 <h2>Wrapping Things Up</h2>
                 
                 <p>
-                    Phase is my first fully complete long-term project. It's got with enough features as a programming lagnauge to write a variety of small practical programs, for example fibonacci:
+                    Phase is my very first complete and polished long-term project. It's got enough features as a programming language to write various small yet practical programs -- for example generating fibonacci sequences:
                 </p>
                 
                 <pre><code class="language-phase">func fibonacci(n: int): void {
@@ -425,14 +376,10 @@ entry {
 }</code></pre>
                 
                 <p>
-                    But if I had to revisit it in the future, I would likely work on standard input, arena memory allocation, and JIT bytecode complication.
+                    And while the project is finished, if I had to revisit it, I would probably work on standard input, arena memory allocation, and JIT bytecode compilation. Overall though, Phase taught me many things like deep compiler/interpreter theory, how to properly design and implement a large project in a low-level language like C, and how to think in a systems-oriented way so I consider all my architectural design decisions. It also proved the effectiveness of project-based learning (something I really value) since everything I learnt was valuable in that it helped me get closer to my goal; I couldn't have developed my software engineering skills so much if I hadn't actually tried to create something like this that was out of my reach at the time.
                 </p>
                 
-                <p>
-                    Overall though, Phase taught me many things like deep compiler/interpreter theory, how to properly design and implement a large project in a low-level language like C, and how to think in a systems-oriented way so I consider all my architectural design decisions. It also proves the sheer effectiveness of project-based learning -- something I really value -- since I everything I learnt had a direct purpose to achieve my goal; I couldn't have acquired all these skills if I hadn't tried to create something out of my reach at the time.
-                </p>
-                
-                <p>
+                <p class="standalone">
                     You can check out Phase's repository on <a href="https://github.com/williamalexakis/phase" target="_blank" rel="noreferrer">GitHub</a>.
                 </p>
             </div>
@@ -450,6 +397,8 @@ entry {
             <a href="https://github.com/williamalexakis" target="_blank" rel="noreferrer">GitHub</a>
             <span class="footer-sep">•</span>
             <a href="https://www.linkedin.com/in/williamalexakis" target="_blank" rel="noreferrer">LinkedIn</a>
+            <span class="footer-sep">•</span>
+            <a href="https://x.com/w_alexakis" target="_blank" rel="noreferrer">X</a>
         </div>
     </footer>
     
