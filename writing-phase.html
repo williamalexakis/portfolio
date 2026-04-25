@@ -24,7 +24,7 @@
     <meta property="og:image:height" content="630">
     <meta property="og:image:alt" content="William Alexakis logo and name">
     <meta property="og:site_name" content="William Alexakis">
-    <meta property="article:modified_time" content="2026-04-12T00:00:00+00:00">
+    <meta property="article:modified_time" content="2026-04-22T00:00:00+00:00">
     <meta property="og:locale" content="en_US">
     <meta property="article:author" content="William Alexakis">
     <meta property="article:published_time" content="2025-12-04T00:00:00+00:00">
@@ -61,6 +61,15 @@
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Serif:wght@400;500;600&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/essay-styles.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+      onload="renderMathInElement(document.body, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$',  right: '$',  display: false}
+        ]
+      });"></script>
 
     <script type="application/ld+json">
     {
@@ -85,7 +94,7 @@
                 "jobTitle": "Student of Software Engineering",
                 "description": "William Alexakis — Student of Software Engineering",
                 "email": "mailto:w.alexakis@icloud.com",
-                "image": "https://williamalexakis.com/images/prestalk.png",
+                "image": "https://williamalexakis.com/images/selfie.png",
                 "sameAs": [
                     "https://github.com/williamalexakis",
                     "https://www.linkedin.com/in/williamalexakis",
@@ -98,7 +107,7 @@
                 "url": "https://williamalexakis.com/writing-phase",
                 "headline": "Writing My Own Programming Language",
                 "description": "How I wrote my own statically-typed bytecode-interpreted programming language in C with zero dependencies.",
-                "abstract": "A retrospective on building Phase, a statically-typed bytecode-interpreted programming language written from scratch in C with zero dependencies. Walks through the lexer, parser, type checker, bytecode compiler, and virtual machine.",
+                "abstract": "A technical retrospective on creating Phase, a statically-typed bytecode-interpreted programming language written in C with zero dependencies, exploring its development history, features, architecture, and design tradeoffs.",
                 "author": {
                     "@id": "https://williamalexakis.com/#person"
                 },
@@ -106,7 +115,7 @@
                     "@id": "https://williamalexakis.com/#person"
                 },
                 "datePublished": "2025-12-04T00:00:00+00:00",
-                "dateModified": "2026-04-12T00:00:00+00:00",
+                "dateModified": "2026-04-22T00:00:00+00:00",
                 "mainEntityOfPage": {
                     "@type": "WebPage",
                     "@id": "https://williamalexakis.com/writing-phase"
@@ -114,7 +123,7 @@
                 "image": "https://williamalexakis.com/icons/social-share.png",
                 "inLanguage": "en",
                 "isAccessibleForFree": true,
-                "wordCount": 1552,
+                "wordCount": 1536,
                 "articleSection": "Systems Software",
                 "about": [
                     {
@@ -239,9 +248,34 @@
                 <h2>How the Interpreter Works</h2>
                 
                 <p>
-                    Phase's interpreter has several stages:<br/>
-                    <strong>IN > Lexer > Parser > Type Checker > Bytecode Generator > Virtual Machine > OUT</strong>
+                    Phase's interpreter has several stages:
                 </p>
+                $$
+                \def\arraystretch{1.28}
+                \newcommand{\vdown}{\big\downarrow}
+                \begin{array}{c}
+                \text{SOURCE CODE} \\
+                \vdown \\
+                \text{Frontend} \\[0.15em]
+                \boxed{\begin{array}{c}
+                \text{Lexer} \\
+                \vdown \\
+                \text{Parser} \\[-1.3em]
+                \hphantom{\text{Bytecode Generator}}
+                \end{array}} \\
+                \vdown \\
+                \text{Backend} \\[0.15em]
+                \boxed{\begin{array}{c}
+                \text{Type Checker} \\
+                \vdown \\
+                \text{Bytecode Generator} \\
+                \vdown \\
+                \text{Virtual Machine}
+                \end{array}} \\
+                \vdown \\
+                \text{OUTPUT}
+                \end{array}
+                $$
                 
                 <p class="standalone">
                     To demonstrate the process, we'll follow this basic line of Phase code from beginning to end:

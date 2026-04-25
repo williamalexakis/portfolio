@@ -92,14 +92,35 @@
 }
 
 .essay-content pre {
-    background: rgba(255, 255, 255, 0.03);
-    border-left: 2px solid rgba(88, 166, 255, 0.25);
+    background: rgba(0, 0, 0, 0.15);
+    border: 1px solid var(--border-mid);
     padding: 1.25rem 1.5rem;
     border-radius: 0;
     overflow-x: auto;
     margin: 1.75rem 0;
     line-height: 1.6;
+    position: relative;
 }
+
+.essay-content pre code::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--border-mid);
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+.essay-content pre code.language-phase::before { content: 'Phase'; }
+.essay-content pre code.language-error::before { content: 'Error'; }
+.essay-content pre code.language-tokens::before { content: 'Tokens'; }
+.essay-content pre code.language-ast::before { content: 'AST'; }
+.essay-content pre code.language-hex::before { content: 'Hex'; }
+.essay-content pre code.language-asm::before { content: 'Bytecode'; }
+.essay-content pre code.language-none::before { content: 'Output'; }
 
 .essay-content pre code {
     background: none;
@@ -130,6 +151,22 @@
 .essay-content li {
     margin: 0.75rem 0;
     line-height: 1.6;
+}
+
+
+
+.essay-content .katex-diagram {
+    display: flex;
+    justify-content: center;
+    margin: 1.6rem 0;
+    overflow-x: visible;
+    width: 100%;
+}
+
+.essay-content .katex-diagram .katex-display {
+    margin: 0;
+    width: max-content;
+    max-width: 100%;
 }
 
 .essay-content li::marker {
@@ -171,5 +208,9 @@
 
     .essay-content h3 {
         font-size: 1.25rem;
+    }
+
+    .essay-content .katex-diagram {
+        font-size: 0.85rem;
     }
 }
